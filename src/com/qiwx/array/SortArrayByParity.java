@@ -6,7 +6,6 @@ public class SortArrayByParity {
     public static void main(String[] args) {
             System.out.println(sortArrayByParityII(new int[]{4,2,5,7}));
     }
-
     public static int[] sortArrayByParityIIBetter(int[] A) {
         int j = 1;
         //此算法更好的利用了条件
