@@ -8,6 +8,7 @@ public class ShortestToChar {
     {
      System.out.println(shortestToChar("loveleetcode",'e'));
      System.out.println(shortestToChar("e",'e'));
+
     }
     private static int[] shortestToChar(String S,char C){
         int[] a=new int[S.length()];
