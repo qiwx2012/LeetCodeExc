@@ -1,7 +1,6 @@
 package com.qiwx.num;
 
-import java.util.LinkedList;
-import java.util.List;
+import com.qiwx.model.ListNode;
 
 public class AddTwoNumbers {
     public static void main(String[] args) {

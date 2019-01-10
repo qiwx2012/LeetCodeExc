@@ -1,4 +1,7 @@
 package com.qiwx.num;
+
+import com.qiwx.model.ListNode;
+
 //删除排序链表中重复的元素
 public class DeleteDuplicates {
     public static void main(String[] args) {

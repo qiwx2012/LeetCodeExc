@@ -1,4 +1,7 @@
 package com.qiwx.num;
+
+import com.qiwx.model.ListNode;
+
 //合并两个有序链表
 public class MergeTwoLists {
     public static void main(String[] args) {
