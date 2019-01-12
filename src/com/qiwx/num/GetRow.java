@@ -1,12 +1,14 @@
 package com.qiwx.num;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
-//杨辉三角
+//杨辉三角1 杨辉三角2
 public class GetRow {
     public static void main(String[] args) {
-        getRow1(4);
+//        getRow1(4);
+        generate(5);
     }
     public static List<Integer> getRow1(int rowIndex) {
         List<Integer> result=new ArrayList<>();
@@ -59,10 +61,34 @@ public class GetRow {
                 result.addAll(temp);
 
             }
-
-
         }
         return result;
 
     }
+    //给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。
+    public static List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> list=new LinkedList<>();
+        int[][] arrys=new int[numRows][numRows];
+        for(int i=0;i<numRows;i++){
+            List<Integer> temp=new ArrayList<>();
+            //杨辉三角可以看成二位数组,
+            for(int j=0;j<=i;j++){
+                if(j==0){
+                    arrys[i][j]=1;//左边索引是0的位置始终是1
+                }else if(j==i){
+                    arrys[i][j]=1;//右边最后一个始终是1
+                }else {
+                    //其他情况，通用算法是 当前索引=前一行 相同索引
+                    // 加上前一行 的前一个索引
+                    arrys[i][j]=arrys[i-1][j-1]+arrys[i-1][j];
+                }
+                temp.add(arrys[i][j]);
+            }
+            list.add(temp);
+
+        }
+
+        return list;
+    }
+
 }
