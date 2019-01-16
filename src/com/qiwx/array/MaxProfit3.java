@@ -11,6 +11,7 @@ public class MaxProfit3 {
        // maxProfit(new int[]{1,2,3,4,5});
         //maxProfit(new int[]{7,6,4,2,1});
         maxProfit(new int[]{1,2,4,2,5,7,2,4,9,0});
+
        // maxProfit(new int[]{1,3,5,4,3,7,6,9,2,4});
         //maxProfit(new int[]{1,2,3,4,5});
     }
