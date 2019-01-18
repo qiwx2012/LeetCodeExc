@@ -5,6 +5,7 @@ import java.util.HashSet;
 public class ContainsDuplicate {
     public static void main(String[] args) {
      System.out.println(containsDuplicate(new int[]{3,3}));
+
     }
     private static boolean containsDuplicate(int[] nums){
         if (nums==null)
