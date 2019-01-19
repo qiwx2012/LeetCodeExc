@@ -2,6 +2,7 @@ package com.qiwx.array;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeSet;
 
 //存在重复元素 II
 public class ContainsNearbyDuplicate {
@@ -29,4 +30,6 @@ public class ContainsNearbyDuplicate {
         }
         return false;
     }
+
+
 }
