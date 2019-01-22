@@ -2,7 +2,6 @@ package com.qiwx.num;
 //3的幂
 public class IsPowerOfThree {
     public static void main(String[] args) {
-
     }
     private boolean isPowerOfThree(int n){
           if(n==0)
