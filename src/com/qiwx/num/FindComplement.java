@@ -1,6 +1,5 @@
 package com.qiwx.num;
 
-
 public class FindComplement {
     public static void main(String[] args) {
         System.out.println(findComplement(5));
