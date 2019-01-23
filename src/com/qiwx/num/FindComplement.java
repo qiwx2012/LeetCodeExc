@@ -1,5 +1,6 @@
 package com.qiwx.num;
-//数字的补数
+
+
 public class FindComplement {
     public static void main(String[] args) {
         System.out.println(findComplement(5));
