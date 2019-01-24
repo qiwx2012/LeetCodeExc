@@ -5,7 +5,6 @@ public class Solution {
         System.out.println(guessNumber(10));
     }
     public static int guessNumber(int n) {
-
         int l=1;
         int r=n;
         int mid=l+(r-l)/2;//避免（min+max）/2 会内存溢出
