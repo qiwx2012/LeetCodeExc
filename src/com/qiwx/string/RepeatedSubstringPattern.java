@@ -2,6 +2,7 @@ package com.qiwx.string;
 //重复的子字符串
 public class RepeatedSubstringPattern {
     public static void main(String[] args) {
+
         System.out.println(repeatedSubstringPattern("aabaaba"));
         System.out.println(repeatedSubstringPattern("abab"));
         System.out.println(repeatedSubstringPattern("abcabcabcabc"));
