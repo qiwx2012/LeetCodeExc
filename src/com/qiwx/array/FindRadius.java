@@ -19,11 +19,16 @@ public class FindRadius {
         int minimum = 0;
         int j = 0;
         for(int i = 0 ;i< n ;i++){
-            while( j < m - 1 && (Math.abs(heaters[j] - houses[i]) >= Math.abs(heaters[j+1] - houses[i])))
-                j ++;
-            //判断当前的房子离哪个加热器近，如果离左边的加热器比较近，更新最小半径为 以前的 和 这次中的较大的
-            //如果离右边加热器比较近，遍历下一个加热器
-            //如[1,2,3,4],[1,4]    1，2离1近，3，4离4近，距离差最大是1
+            //先从第一个加热器开始计算，当房子离第一个加热器
+            //的距离大于第二个的时候，保留最小半径，继续下一个
+            while (j<m-1){
+                if(Math.abs(heaters[j] - houses[i]) >= Math.abs(heaters[j+1] - houses[i])){
+                    j++;
+                }else {
+                    break;
+                }
+            }
+            //更新半径
             minimum = Math.max(minimum,Math.abs(heaters[j] - houses[i]));
         }
         return minimum;
