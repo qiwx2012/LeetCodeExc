@@ -26,6 +26,7 @@ public class LicenseKeyFormatting {
        }
        return sb.toString();
 
+
     }
     //更快
     public String licenseKeyFormatting1(String S, int K) {
