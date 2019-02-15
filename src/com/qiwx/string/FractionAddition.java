@@ -1,6 +1,8 @@
 package com.qiwx.string;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Stack;
 
 //分数加减运算
@@ -184,7 +186,7 @@ public class FractionAddition {
                     nums.set(i,a2/b2+"/"+"1");
                 }else {
                     //只需要计算最小数的一半就可以遍历完公约数
-                    int size=Math.min(Math.abs(a2),Math.abs(b2))/2;
+                    int size=Math.min(Math.abs(a2),b2)/2;
                     for(int j=2;j<size;j++){
                         if(a2%j==0&&b2%j==0){
                             a2=a2/j;
