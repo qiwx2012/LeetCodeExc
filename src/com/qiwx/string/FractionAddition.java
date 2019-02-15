@@ -107,6 +107,7 @@ public class FractionAddition {
                }
            }
         }
+
         if(sb.length()>0)
             nums.add(sb.toString());
         for(int i=1;i<=nums.size()-1;i++){
