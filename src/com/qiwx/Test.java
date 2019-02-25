@@ -1,7 +1,10 @@
 package com.qiwx;
 
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Test {
     public static void main(String[] args) {
@@ -19,6 +22,9 @@ public class Test {
         sb.append("ffff");
         System.out.println(sb.toString());
         System.out.println(sb2.toString());
+        HashMap hashMap;
+        Hashtable hashtable;
+        ConcurrentHashMap concurrentHashMap;
 
 
     }
