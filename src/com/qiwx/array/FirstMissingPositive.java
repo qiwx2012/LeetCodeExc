@@ -34,12 +34,12 @@ public class FirstMissingPositive {
                 j=i+1;
                 for(;j<nums.length;j++){
                     if(nums[j]==i+1){
-                        int a=nums[i];
-                        nums[i]=nums[j];
-                        nums[j]=a;
-//                        nums[i]=nums[i]^nums[j];
-//                        nums[j]=nums[i]^nums[j];
-//                        nums[i]=nums[i]^nums[j];
+//                        int a=nums[i];
+//                        nums[i]=nums[j];
+//                        nums[j]=a;
+                        nums[i]=nums[i]^nums[j];
+                        nums[j]=nums[i]^nums[j];
+                        nums[i]=nums[i]^nums[j];
                         break;
                     }
 
