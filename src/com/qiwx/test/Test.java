@@ -1,4 +1,4 @@
-package com.qiwx;
+package com.qiwx.test;
 
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -8,13 +8,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Test {
     public static void main(String[] args) {
-//      List<Integer> list=new LinkedList<>();
-//              list.add(1);
-//              list.add(1);
-//              list.add(2);
-//              list.add(3);
-//              list.remove(1);
-//              System.out.println(list.size());
+        LinkedList<Integer> list=new LinkedList<>();
+              list.add(1);
+              list.add(1);
+              list.add(2);
+              list.add(3);
+              list.remove(1);
+              System.out.println(list.size());
+              for(int i=list.size();i>=0;i--){
+                  list.poll();
+                  list.push(10);
+              }
+
 
         StringBuffer sb=new StringBuffer();
         sb.append("abcd");
