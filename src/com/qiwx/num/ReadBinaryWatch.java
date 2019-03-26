@@ -28,7 +28,6 @@ public class ReadBinaryWatch {
             lightNums.put(i,count);
         }
 
-
         for(int i=1;i<=59;i++){
             int minute=lightNums.get(i);
             if(minute==num){
