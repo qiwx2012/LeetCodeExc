@@ -1,9 +1,6 @@
 package com.qiwx.test;
 
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Test {
@@ -11,9 +8,11 @@ public class Test {
         LinkedList<Integer> list=new LinkedList<>();
               list.add(1);
               list.add(1);
+              list.add(6);
               list.add(2);
               list.add(3);
               list.remove(1);
+              Collections.sort(list);
               System.out.println(list.size());
               for(int i=list.size();i>=0;i--){
                   list.poll();
