@@ -16,7 +16,6 @@ public class MinStack {
         if(min>x){
             min=x;
         }
-
     }
 
     public void pop() {
