@@ -17,5 +17,4 @@ package com.qiwx.num;
          return (temp&(temp+1))==0;
 
      }
-
 }
