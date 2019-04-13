@@ -9,24 +9,25 @@ public class MaxIncreaseKeepingSkyline {
      // 小于每列最高值和每行最高值的的最大值
         int[]maxx=new int[grid.length];
         int[]maxy=new int[grid[0].length];
-        //先计算纵向最大值
-        maxy[0]=grid[0][0];
-        for(int i=0;i<grid[0].length;i++){
-            for(int j=0;j<grid.length;j++){
-                if(maxy[i]<grid[i][j]){
-                    maxy[i]=grid[i][j];
-                }
-            }
-        }
         //计算横向最大值
         maxx[0]=grid[0][0];
-        for(int i=0;i<grid[0].length;i++){
-            for(int j=0;j<grid.length;j++){
+        for(int i=0;i<grid.length;i++){
+            for(int j=0;j<grid[0].length;j++){
                 if(maxx[i]<grid[j][i]){
                     maxx[i]=grid[j][i];
                 }
             }
         }
+        //先计算纵向最大值
+        maxy[0]=grid[0][0];
+        for(int i=0;i<grid.length;i++){
+            for(int j=0;j<grid[0].length;j++){
+                if(maxy[i]<grid[i][j]){
+                    maxy[i]=grid[i][j];
+                }
+            }
+        }
+
         int num=0;
         for(int i=0;i<grid[0].length;i++){
             for(int j=0;j<grid.length;j++){
