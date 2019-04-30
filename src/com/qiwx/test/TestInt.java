@@ -9,6 +9,5 @@ public class TestInt {
         String ab="abc";
         System.out.println(ab.hashCode());
         System.out.println(ab.hashCode());
-        System.out.println("0左位移一位值："+(1<<0));
     }
 }
