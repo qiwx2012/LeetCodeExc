@@ -1,4 +1,4 @@
-package com.qiwx.array;
+package com.qiwx.dynamic;
 
 import java.util.Stack;
 

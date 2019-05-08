@@ -1,4 +1,4 @@
-package com.qiwx.array;
+package com.qiwx.dynamic;
 
 import java.util.Stack;
 
@@ -21,6 +21,18 @@ public class MaxProfit {
             max = max < temp ? temp : max;
         }
         return max;
+    }
+    private static int maxProfit11(int[] prices){
+        int minPrice=Integer.MAX_VALUE;
+        int maxPrice=0;
+        for(int i=0;i<prices.length;i++){
+            if(minPrice>prices[i]){
+                minPrice=prices[i];
+            }else if(prices[i]-minPrice>maxPrice){
+                maxPrice=prices[i]-minPrice;
+            }
+        }
+        return maxPrice;
     }
     public static int maxProfit(int[] prices) {
         //类似波峰波谷的形状，先从波低开始买入，再波峰处卖掉
