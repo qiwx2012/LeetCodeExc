@@ -11,5 +11,9 @@ public class A {
         SoftReference<String> sr=new SoftReference<>("Soft");
         System.out.println(wk.get());
         sr.get();
+
+
+
+
     }
 }
