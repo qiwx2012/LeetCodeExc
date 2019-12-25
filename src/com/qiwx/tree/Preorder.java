@@ -10,14 +10,16 @@ public class Preorder {
     public static void main(String[] args) {
 
     }
+
     //对于数的遍历，最佳实现是利用迭代结构来处理
-    List<Integer> result=new LinkedList<>();
+    List<Integer> result = new LinkedList<>();
+
     public List<Integer> preorder(Node root) {
-        if(root==null){
+        if (root == null) {
             return result;
-        }else {
+        } else {
             result.add(root.val);
-            for(Node node:root.children){
+            for (Node node : root.children) {
                 preorder(node);
             }
         }

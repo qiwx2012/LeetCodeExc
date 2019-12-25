@@ -12,6 +12,7 @@ public class Calculate2 {
         System.out.println(calculate("2-(5)"));
         System.out.println(calculate("(1+(4+5+2)-3)+(6+8)"));
     }
+
     public static int calculate(String s) {
         int res = 0, num = 0, sign = 1, n = s.length();
         for (int i = 0; i < n; ++i) {
@@ -19,21 +20,21 @@ public class Calculate2 {
             if (c >= '0' && c <= '9') {
                 num = 10 * num + (c - '0');
             } else if (c == '(') {
-                int start=i+1;
-                int count=0;
-                while (true){
-                  char c1=s.charAt(i);
-                  if(c1=='('){
-                      ++count;
-                  }else if(c1==')'){
-                      --count;
-                  }
-                  if(count==0)
-                      break;
-                  i++;
+                int start = i + 1;
+                int count = 0;
+                while (true) {
+                    char c1 = s.charAt(i);
+                    if (c1 == '(') {
+                        ++count;
+                    } else if (c1 == ')') {
+                        --count;
+                    }
+                    if (count == 0)
+                        break;
+                    i++;
 
                 }
-                String s1=s.substring(start, i);
+                String s1 = s.substring(start, i);
                 num = calculate(s1);
             }
             if (c == '+' || c == '-' || i == n - 1) {
@@ -44,15 +45,16 @@ public class Calculate2 {
         }
         return res;
     }
+
     public static int calculate1(String s) {
         int res = 0, sign = 1, n = s.length();
-        LinkedList<Integer> st=new LinkedList<>();
+        LinkedList<Integer> st = new LinkedList<>();
         for (int i = 0; i < n; ++i) {
             char c = s.charAt(i);
             if (c >= '0') {
                 int num = 0;
                 while (i < n && s.charAt(i) >= '0') {
-                    num = 10 * num + s.charAt(i+1) - '0';
+                    num = 10 * num + s.charAt(i + 1) - '0';
                 }
                 res += sign * num;
                 --i;
@@ -66,8 +68,10 @@ public class Calculate2 {
                 res = 0;
                 sign = 1;
             } else if (c == ')') {
-                res *= st.pop(); st.pop();
-                res += st.pop(); st.pop();
+                res *= st.pop();
+                st.pop();
+                res += st.pop();
+                st.pop();
             }
         }
         return res;

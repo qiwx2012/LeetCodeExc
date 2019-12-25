@@ -2,17 +2,18 @@ package com.qiwx.array;
 
 public class CanPlaceFlowers {
     public static void main(String[] args) {
-         //canPlaceFlowers(new int[]{1,0,0,0,1,0,0},2);
-         //canPlaceFlowers(new int[]{0},1);
+        //canPlaceFlowers(new int[]{1,0,0,0,1,0,0},2);
+        //canPlaceFlowers(new int[]{0},1);
 
-         //System.out.println(canPlaceFlowers(new int[]{0,1,0},1));
-         //System.out.println(canPlaceFlowers(new int[]{0},1));
-         //System.out.println(canPlaceFlowers(new int[]{1,0,0,0,1,0,0},2));
+        //System.out.println(canPlaceFlowers(new int[]{0,1,0},1));
+        //System.out.println(canPlaceFlowers(new int[]{0},1));
+        //System.out.println(canPlaceFlowers(new int[]{1,0,0,0,1,0,0},2));
         // System.out.println(canPlaceFlowers(new int[]{1,0,0,0,1,0,0},2));
-         //System.out.println(canPlaceFlowers(new int[]{1,0,0,0,1},1));
+        //System.out.println(canPlaceFlowers(new int[]{1,0,0,0,1},1));
         // System.out.println(canPlaceFlowers(new int[]{0,0,1,0,0},1));
-         System.out.println(canPlaceFlowers(new int[]{1,0,0,0},1));
+        System.out.println(canPlaceFlowers(new int[]{1, 0, 0, 0}, 1));
     }
+
     public static boolean canPlaceFlowers(int[] flowerbed, int n) {
         if (n == 0)
             return true;
@@ -34,13 +35,13 @@ public class CanPlaceFlowers {
             if (i == 0 && flowerbed[i] == 0) {
                 //第一个位置相当于左边默认是一个空位
                 count = count + 2;
-            } else if (flowerbed[i] == 0&&i==len-1) {
+            } else if (flowerbed[i] == 0 && i == len - 1) {
                 //最后一个位置默认有一个空位
                 count = count + 2;
             } else if (flowerbed[i] == 0) {
                 count++;
-            }else {
-                count=0;
+            } else {
+                count = 0;
             }
             //count有可能会出现大于3的情况
             if (count >= 3) {
@@ -49,7 +50,7 @@ public class CanPlaceFlowers {
                 i--;
                 count = 0;
             }
-            if(n==0){
+            if (n == 0) {
                 return true;
             }
 

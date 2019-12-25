@@ -28,7 +28,8 @@ public class Demo {
         new Demo().new Sub(5);
     }
 
-    public void func(){
-         final class c1{}
+    public void func() {
+        final class c1 {
+        }
     }
 }

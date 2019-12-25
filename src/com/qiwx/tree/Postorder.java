@@ -10,12 +10,14 @@ public class Postorder {
     public static void main(String[] args) {
 
     }
-    static List<Integer> result=new LinkedList<>();
+
+    static List<Integer> result = new LinkedList<>();
+
     public static List<Integer> postorder(Node root) {
-        if(root==null){
+        if (root == null) {
             return result;
-        }else {
-            for(Node node:root.children){
+        } else {
+            for (Node node : root.children) {
                 postorder(node);
             }
             result.add(root.val);

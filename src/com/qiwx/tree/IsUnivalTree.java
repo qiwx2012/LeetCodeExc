@@ -8,30 +8,31 @@ import java.util.List;
 //965. 单值二叉树
 public class IsUnivalTree {
     public static void main(String[] args) {
-        TreeNode node=new TreeNode(0);
-        node.right=new TreeNode(0);
+        TreeNode node = new TreeNode(0);
+        node.right = new TreeNode(0);
         isUnivalTree(node);
     }
+
     public static boolean isUnivalTree(TreeNode root) {
-        if(root==null)
+        if (root == null)
             return true;
-        int current=root.val;
-        LinkedList<TreeNode> list=new LinkedList<>();
+        int current = root.val;
+        LinkedList<TreeNode> list = new LinkedList<>();
         list.add(root);
-        while (list.size()>0){
-            TreeNode node=list.pop();
-            if(node.left!=null){
-                if(node.left.val==current){
+        while (list.size() > 0) {
+            TreeNode node = list.pop();
+            if (node.left != null) {
+                if (node.left.val == current) {
                     list.add(node.left);
-                }else {
+                } else {
                     return false;
                 }
 
             }
-            if(node.right!=null){
-                if(node.right.val==current){
+            if (node.right != null) {
+                if (node.right.val == current) {
                     list.add(node.right);
-                }else {
+                } else {
                     return false;
                 }
             }

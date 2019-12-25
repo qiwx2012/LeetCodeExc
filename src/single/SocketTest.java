@@ -9,28 +9,29 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class SocketTest {
-    private static final int PORT=9999;
-    private List<Socket> mList=new LinkedList<>();
-    private ServerSocket server=null;
-    private ExecutorService mExecutorService=null;
-    private String receiveMsg=null;
+    private static final int PORT = 9999;
+    private List<Socket> mList = new LinkedList<>();
+    private ServerSocket server = null;
+    private ExecutorService mExecutorService = null;
+    private String receiveMsg = null;
     private String sendMsg;
 
     public static void main(String[] args) {
-         new SocketTest();
+        new SocketTest();
     }
-    public SocketTest(){
+
+    public SocketTest() {
         try {
-            server=new ServerSocket(PORT);
+            server = new ServerSocket(PORT);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        mExecutorService=Executors.newCachedThreadPool();
+        mExecutorService = Executors.newCachedThreadPool();
         System.out.println("service is running...");
-        Socket client=null;
-        while (true){
+        Socket client = null;
+        while (true) {
             try {
-                client=server.accept();
+                client = server.accept();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -39,21 +40,22 @@ public class SocketTest {
         }
 
     }
-    class Service implements Runnable{
-        Socket socket;
-        BufferedReader in=null;
-        PrintWriter printWriter=null;
 
-        public Service(Socket socket){
-            this.socket=socket;
+    class Service implements Runnable {
+        Socket socket;
+        BufferedReader in = null;
+        PrintWriter printWriter = null;
+
+        public Service(Socket socket) {
+            this.socket = socket;
             try {
-                printWriter=new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(),"UTF-8")),true);
-                in=new BufferedReader(new InputStreamReader(socket.getInputStream(),"UTF-8"));
-                printWriter.println("成功连接服务器"+"(服务器发送)");
+                printWriter = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8")), true);
+                in = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
+                printWriter.println("成功连接服务器" + "(服务器发送)");
                 System.out.println("成功连接服务器");
 
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

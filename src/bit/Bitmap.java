@@ -7,16 +7,16 @@ public class Bitmap {
     /**
      * @param length 位图长度，实际可操作下标为[0,length)
      */
-    public Bitmap(int length){
+    public Bitmap(int length) {
         this.length = length;
-        bytes = new byte[length%8==0 ? length/8 : length/8+1];
+        bytes = new byte[length % 8 == 0 ? length / 8 : length / 8 + 1];
     }
 
     /**
      * 设置指定位的值
      */
-    public void set(int index, boolean value){
-        if(value)
+    public void set(int index, boolean value) {
+        if (value)
             //通过给定位index，先定位到对应byte
             //并根据value值进行不同位操作：
             //  1.如果value为true，则目标位应该做“或”运算。则需构建“目标位为1，其他为0”的操作数，为了只合理操作目标位，而不影响其他位
@@ -29,11 +29,11 @@ public class Bitmap {
     /**
      * 获取指定位的值
      */
-    public boolean get(int index){
+    public boolean get(int index) {
         int i = index & 7;
         //构建到index结束的低位掩码并做&运算（为了将高位置0），然后将结果一直右移直到目标位(index位)移到第1位
         //然后根据其值返回结果
-        if((bytes[index >> 3] & (0b11111111>>>(7-i))) >> i == 0)
+        if ((bytes[index >> 3] & (0b11111111 >>> (7 - i))) >> i == 0)
             return false;
         else
             return true;
@@ -42,11 +42,11 @@ public class Bitmap {
     @Override
     public String toString() {
         StringBuffer buffer = new StringBuffer("Bitmap[");
-        for(int i=0;i<length;i++){
+        for (int i = 0; i < length; i++) {
             buffer.append(get(i)).append(',');
         }
-        if (bytes.length!=0)
-            buffer = buffer.deleteCharAt(buffer.length()-1);
+        if (bytes.length != 0)
+            buffer = buffer.deleteCharAt(buffer.length() - 1);
         buffer.append(']');
         return buffer.toString();
     }

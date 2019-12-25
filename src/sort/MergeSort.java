@@ -3,11 +3,11 @@ package sort;
 //归并排序
 public class MergeSort {
     public static void main(String[] args) {
-        int[] a = { 49, 38, 65, 97, 76, 13, 27, 50 };
-        mergeSort(a, 0, a.length-1);
+        int[] a = {49, 38, 65, 97, 76, 13, 27, 50};
+        mergeSort(a, 0, a.length - 1);
         System.out.println("排好序的数组：");
         for (int e : a)
-            System.out.print(e+" ");
+            System.out.print(e + " ");
     }
 
     //将两个拍好序的子序列合并为一个子序列
@@ -31,17 +31,18 @@ public class MergeSort {
             temp[k++] = a[p2++];
         }
         //复制回原素组
-        for (int i = left; i <=right; i++){
-            a[i]=temp[i];
-            System.out.println("temp的item"+temp[i]);
+        for (int i = left; i <= right; i++) {
+            a[i] = temp[i];
+            System.out.println("temp的item" + temp[i]);
         }
 
     }
-    public static void mergeSort(int [] a,int start,int end){
-        if(start<end){//当子序列中只有一个元素时结束递归
-            int mid=(start+end)/2;//划分子序列
+
+    public static void mergeSort(int[] a, int start, int end) {
+        if (start < end) {//当子序列中只有一个元素时结束递归
+            int mid = (start + end) / 2;//划分子序列
             mergeSort(a, start, mid);//对左侧子序列进行递归排序
-            mergeSort(a, mid+1, end);//对右侧子序列进行递归排序
+            mergeSort(a, mid + 1, end);//对右侧子序列进行递归排序
             merge(a, start, mid, end);//合并
         }
     }

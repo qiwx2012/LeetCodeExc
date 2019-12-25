@@ -7,8 +7,9 @@ import java.util.*;
 public class Intersect {
     public static void main(String[] args) {
         //intersect1(new int[]{4,9,5},new int[]{9,4,9,8,4});
-        intersect1(new int[]{1,2,2,1},new int[]{2});
+        intersect1(new int[]{1, 2, 2, 1}, new int[]{2});
     }
+
     public static int[] intersect1(int[] nums1, int[] nums2) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums1) {
@@ -29,24 +30,25 @@ public class Intersect {
         }
         return ret;
     }
+
     public int[] intersect(int[] nums1, int[] nums2) {
-        List<Integer> list=new LinkedList<>();
-        for(int s:nums1){
+        List<Integer> list = new LinkedList<>();
+        for (int s : nums1) {
             list.add(s);
         }
-        List<Integer> list2=new LinkedList<>();
-        for(int i:nums2){
-            if(list.contains(i)){
+        List<Integer> list2 = new LinkedList<>();
+        for (int i : nums2) {
+            if (list.contains(i)) {
                 list2.add(i);
                 list.remove(Integer.valueOf(i));
             }
 
         }
-        int len=list2.size();
-        int[] result=new int[len];
-        int index=0;
-        for(Integer i:list2){
-            result[index]=i;
+        int len = list2.size();
+        int[] result = new int[len];
+        int index = 0;
+        for (Integer i : list2) {
+            result[index] = i;
             index++;
         }
         return result;

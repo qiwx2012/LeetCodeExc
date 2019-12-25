@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class MQueue {
     public static void main(String[] args) {
-        ArrayBlockingQueue queue= new ArrayBlockingQueue(10);
+        ArrayBlockingQueue queue = new ArrayBlockingQueue(10);
         queue.add("fd");
     }
 }

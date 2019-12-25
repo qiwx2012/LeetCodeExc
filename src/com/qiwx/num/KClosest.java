@@ -6,8 +6,9 @@ public class KClosest {
     public static void main(String[] args) {
 
     }
+
     public static int[][] kClosest(int[][] points, int K) {
-        Map<Integer, List<int[]>> map=new HashMap<>();
+        Map<Integer, List<int[]>> map = new HashMap<>();
         int[] tmp = new int[points.length];
         for (int i = 0; i < points.length; i++) {
             int[] point = points[i];

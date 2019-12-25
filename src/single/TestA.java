@@ -5,7 +5,7 @@ public class TestA {
         //A a=new A();
 //        A.B b=new A.B();
         //A.B.addNum();
-        AA aa=new AA();
+        AA aa = new AA();
 
     }
 }

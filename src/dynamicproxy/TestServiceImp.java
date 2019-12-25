@@ -15,6 +15,6 @@ public class TestServiceImp implements TestService {
 
     @Override
     public void test3(String content) {
-        System.out.println("参数："+ content);
+        System.out.println("参数：" + content);
     }
 }

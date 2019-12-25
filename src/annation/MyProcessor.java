@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class MyProcessor extends AbstractProcessor {
 
-    public MyProcessor(){
+    public MyProcessor() {
 
     }
 

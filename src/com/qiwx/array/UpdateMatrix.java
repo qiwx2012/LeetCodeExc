@@ -1,9 +1,11 @@
 package com.qiwx.array;
+
 //01 矩阵
 public class UpdateMatrix {
     public static void main(String[] args) {
-        updateMatrix(new int[][]{{0,0,0},{0,1,0},{1,1,1}});
+        updateMatrix(new int[][]{{0, 0, 0}, {0, 1, 0}, {1, 1, 1}});
     }
+
     public static int[][] updateMatrix(int[][] matrix) {
         int row;
         int col;

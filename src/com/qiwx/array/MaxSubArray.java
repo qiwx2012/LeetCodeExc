@@ -1,12 +1,14 @@
 package com.qiwx.array;
+
 //最大子序号
 public class MaxSubArray {
     public static void main(String[] args) {
-        System.out.println(maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
+        System.out.println(maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
 
 
     }
-    private static int maxSubArray(int[]nums){
+
+    private static int maxSubArray(int[] nums) {
         int res = nums[0];
         int sum = 0;//初始和为0
         for (int num : nums) {

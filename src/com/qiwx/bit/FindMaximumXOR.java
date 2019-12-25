@@ -11,9 +11,9 @@ public class FindMaximumXOR {
     public static int findMaximumXOR(int[] nums) {
         TreeNode root = new TreeNode(-1);
         // build the tree
-        for(int n : nums) {
+        for (int n : nums) {
             TreeNode node = root;
-            for(int i = 31; i>=0; i--) {
+            for (int i = 31; i >= 0; i--) {
                 if ((n & (1 << i)) == 0) { // 如果等于0表示高位为0
                     if (node.left == null) {
                         node.left = new TreeNode(0);
@@ -30,10 +30,10 @@ public class FindMaximumXOR {
         }
 
         int max = 0;
-        for(int n: nums) {
+        for (int n : nums) {
             TreeNode node = root;
-            for(int i=31; i>=0; i--) {
-                if ((n & (1<<i)) == 0) {
+            for (int i = 31; i >= 0; i--) {
+                if ((n & (1 << i)) == 0) {
                     if (node.right != null) {
                         node = node.right;
                     } else {

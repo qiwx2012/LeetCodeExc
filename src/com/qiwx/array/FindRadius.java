@@ -5,10 +5,10 @@ import java.util.Arrays;
 //供暖器
 public class FindRadius {
     public static void main(String[] args) {
-       System.out.println(findRadius(new int[]{1,2,3},new int[]{2}));
-       System.out.println(findRadius(new int[]{1},new int[]{1,2,3,4}));
-       //System.out.println(findRadius(new int[]{1,2,3,4,5,6,7,8,9},new int[]{2,5}));
-       System.out.println(findRadius(new int[]{1,5},new int[]{2}));
+        System.out.println(findRadius(new int[]{1, 2, 3}, new int[]{2}));
+        System.out.println(findRadius(new int[]{1}, new int[]{1, 2, 3, 4}));
+        //System.out.println(findRadius(new int[]{1,2,3,4,5,6,7,8,9},new int[]{2,5}));
+        System.out.println(findRadius(new int[]{1, 5}, new int[]{2}));
     }
 
     public int findRadius1(int[] houses, int[] heaters) {
@@ -18,24 +18,22 @@ public class FindRadius {
         int m = heaters.length;
         int minimum = 0;
         int j = 0;
-        for(int i = 0 ;i< n ;i++){
+        for (int i = 0; i < n; i++) {
             //先从第一个加热器开始计算，当房子离第一个加热器
             //的距离大于第二个的时候，保留最小半径，继续下一个
-            while (j<m-1){
-                if(Math.abs(heaters[j] - houses[i]) >= Math.abs(heaters[j+1] - houses[i])){
+            while (j < m - 1) {
+                if (Math.abs(heaters[j] - houses[i]) >= Math.abs(heaters[j + 1] - houses[i])) {
                     j++;
-                }else {
+                } else {
                     break;
                 }
             }
             //更新半径
-            minimum = Math.max(minimum,Math.abs(heaters[j] - houses[i]));
+            minimum = Math.max(minimum, Math.abs(heaters[j] - houses[i]));
         }
         return minimum;
 
     }
-
-
 
 
     public static int findRadius(int[] houses, int[] heaters) {

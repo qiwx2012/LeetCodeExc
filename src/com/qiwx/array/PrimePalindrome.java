@@ -1,13 +1,15 @@
 package com.qiwx.array;
+
 //回文素数
 public class PrimePalindrome {
     public static void main(String[] args) {
-         System.out.println(primePalindrome(9989900));
+        System.out.println(primePalindrome(9989900));
     }
-    private static int primePalindrome(int N){
+
+    private static int primePalindrome(int N) {
         int[] check = new int[]{2, 2, 2, 3, 5, 5, 7, 7, 11, 11, 11, 11};
-        if(N < check.length && check[N] > 0) return check[N];
-        for(;;) {
+        if (N < check.length && check[N] > 0) return check[N];
+        for (; ; ) {
             int mod = N % 6;
             String cs = String.valueOf(N);
             // 新增了一个判断，用于跳过数字长度为偶数的区间
@@ -16,15 +18,15 @@ public class PrimePalindrome {
                 continue;
             }
             // 原代码
-            if((mod == 1 || mod == 5)) {
+            if ((mod == 1 || mod == 5)) {
                 boolean isPrime = true, isPalindrome = true;
-                for(int i=5, j = 0,
-                    L1 = (int) Math.sqrt(N),
-                    strLen = cs.length(),
-                    L2 = strLen >> 1;
-                    i <= L1 || j < L2;
-                    i+=6, ++j) {
-                    if(i <= L1 && (N % i == 0 || N % (i + 2) == 0)) {
+                for (int i = 5, j = 0,
+                     L1 = (int) Math.sqrt(N),
+                     strLen = cs.length(),
+                     L2 = strLen >> 1;
+                     i <= L1 || j < L2;
+                     i += 6, ++j) {
+                    if (i <= L1 && (N % i == 0 || N % (i + 2) == 0)) {
                         isPrime = false;
                         break;
                     }
@@ -33,12 +35,12 @@ public class PrimePalindrome {
                         break;
                     }
                 }
-                if(isPrime && isPalindrome) {
+                if (isPrime && isPalindrome) {
                     return N;
                 }
-                N = mod == 1? N + 4: N + 2;
+                N = mod == 1 ? N + 4 : N + 2;
             } else {
-                N = mod == 0? N + 1: N + (5 - mod);
+                N = mod == 0 ? N + 1 : N + (5 - mod);
             }
         }
     }

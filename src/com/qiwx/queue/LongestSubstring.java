@@ -11,19 +11,20 @@ public class LongestSubstring {
         // System.out.println(lengthOfLongestSubstring("pwwkew"));
         System.out.println(lengthOfLongestSubstring(""));
     }
+
     public static int lengthOfLongestSubstring(String s) {
-        int maxlen=0;
-        char [] chars=s.toCharArray();
-        Queue<Character> queues=new LinkedList<>();
-        for(int i=0;i<chars.length;i++){
-            if(queues.isEmpty()){
+        int maxlen = 0;
+        char[] chars = s.toCharArray();
+        Queue<Character> queues = new LinkedList<>();
+        for (int i = 0; i < chars.length; i++) {
+            if (queues.isEmpty()) {
                 queues.offer(chars[i]);
-            }else{
-                if(!queues.contains(chars[i])){
+            } else {
+                if (!queues.contains(chars[i])) {
                     queues.offer(chars[i]);
-                }else{
-                    maxlen=maxlen<queues.size()?queues.size():maxlen;
-                    while (queues.peek().charValue()!=chars[i]) {
+                } else {
+                    maxlen = maxlen < queues.size() ? queues.size() : maxlen;
+                    while (queues.peek().charValue() != chars[i]) {
                         queues.poll();
                     }
                     queues.poll();
@@ -31,7 +32,7 @@ public class LongestSubstring {
                 }
             }
         }
-        return maxlen>queues.size()?maxlen:queues.size();
+        return maxlen > queues.size() ? maxlen : queues.size();
 
     }
 }

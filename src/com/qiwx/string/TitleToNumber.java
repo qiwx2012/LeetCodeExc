@@ -1,4 +1,5 @@
 package com.qiwx.string;
+
 //Excel表列序号
 public class TitleToNumber {
     public static void main(String[] args) {
@@ -7,12 +8,13 @@ public class TitleToNumber {
         System.out.println(titleToNumber("AB"));
         System.out.println(titleToNumber("ZY"));
     }
+
     public static int titleToNumber(String s) {
-        char[] chars=s.toCharArray();
-        int count=0;
-        int ratio=0;
-        for(int i=chars.length-1;i>=0;i--){
-            count+=(chars[i]-'A'+1)*((int)Math.pow(26,ratio));
+        char[] chars = s.toCharArray();
+        int count = 0;
+        int ratio = 0;
+        for (int i = chars.length - 1; i >= 0; i--) {
+            count += (chars[i] - 'A' + 1) * ((int) Math.pow(26, ratio));
             ratio++;
 
         }

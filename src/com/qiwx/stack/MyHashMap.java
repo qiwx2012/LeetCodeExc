@@ -6,36 +6,45 @@ import java.util.Map;
 
 //设计哈希映射
 public class MyHashMap {
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
 
-      private LinkedList<Integer> list=null;
-      public MyHashMap() {
-            list =new LinkedList<>();
-        }
+    private LinkedList<Integer> list = null;
 
-        /** value will always be non-negative. */
-        public void put(int key, int value) {
-            int size=list.size();
-            if(size<key){
-                for(int i=size;i<=key;i++){
-                    list.add(i,null);
-                }
-            }
-            list.set(key,value);
-        }
-
-        /** Returns the value to which the specified key is mapped, or -1 if this hash contains no mapping for the key */
-        public int get(int key) {
-            if(key<list.size()){
-                return list.get(key)==null?-1:list.get(key);
-            }
-            return -1;
+    public MyHashMap() {
+        list = new LinkedList<>();
     }
 
-    /** Removes the mapping of the specified value key if this hash contains a mapping for the key */
+    /**
+     * value will always be non-negative.
+     */
+    public void put(int key, int value) {
+        int size = list.size();
+        if (size < key) {
+            for (int i = size; i <= key; i++) {
+                list.add(i, null);
+            }
+        }
+        list.set(key, value);
+    }
+
+    /**
+     * Returns the value to which the specified key is mapped, or -1 if this hash contains no mapping for the key
+     */
+    public int get(int key) {
+        if (key < list.size()) {
+            return list.get(key) == null ? -1 : list.get(key);
+        }
+        return -1;
+    }
+
+    /**
+     * Removes the mapping of the specified value key if this hash contains a mapping for the key
+     */
     public void remove(int key) {
-        if(key<list.size()){
-            list.set(key,null);
+        if (key < list.size()) {
+            list.set(key, null);
         }
     }
 }

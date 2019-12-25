@@ -21,9 +21,10 @@ public class SerializeDemo {
         oo.writeObject(person);
         oo.close();
     }
-    private static Person deserilizePerson() throws Exception{
-        ObjectInputStream ois=new ObjectInputStream(new FileInputStream("E:/java_test/Person.txt"));
-        Person person=(Person)ois.readObject();
+
+    private static Person deserilizePerson() throws Exception {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("E:/java_test/Person.txt"));
+        Person person = (Person) ois.readObject();
         return person;
 
 

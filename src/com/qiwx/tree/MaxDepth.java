@@ -9,7 +9,9 @@ public class MaxDepth {
     public static void main(String[] args) {
 
     }
+
     int result = 0;
+
     public int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;

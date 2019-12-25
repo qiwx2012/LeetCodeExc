@@ -90,31 +90,31 @@ public class SolveSudoku {
             for (int d = 1; d < 10; d++) {
                 if (couldPlace(d, row, col)) {
                     placeNumber(d, row, col);
-                    placeNextNumbers(row,col);
-                    if(!sudokuSolved){
-                        removeNumber(d,row,col);
+                    placeNextNumbers(row, col);
+                    if (!sudokuSolved) {
+                        removeNumber(d, row, col);
                     }
                 }
             }
-        }else {
-            placeNextNumbers(row,col);
+        } else {
+            placeNextNumbers(row, col);
         }
 
     }
 
     public void solveSudoku(char[][] board) {
         //box size
-        this.board=board;
-        for (int i=0;i<N;i++){
-            for(int j=0;j<N;j++){
-                char num=board[i][j];
-                if(num!='.'){
-                    int d=Character.getNumericValue(num);
-                    placeNumber(d,i,j);
+        this.board = board;
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                char num = board[i][j];
+                if (num != '.') {
+                    int d = Character.getNumericValue(num);
+                    placeNumber(d, i, j);
                 }
             }
         }
-        backtrack(0,0);
+        backtrack(0, 0);
 
 
     }

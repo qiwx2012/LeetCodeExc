@@ -9,6 +9,7 @@ public class FourSum {
     public static void main(String[] args) {
 
     }
+
     public static List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> res = new ArrayList<>();
         if (nums == null || nums.length < 4) {
@@ -45,9 +46,9 @@ public class FourSum {
                         }
                         p++;
                         q--;
-                    }else if (sum < target) {
+                    } else if (sum < target) {
                         p++;
-                    }else {
+                    } else {
                         q--;
                     }
                 }

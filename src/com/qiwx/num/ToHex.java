@@ -1,10 +1,13 @@
 package com.qiwx.num;
+
 //数字转换为十六进制数
 public class ToHex {
     public static void main(String[] args) {
 
     }
+
     private static final char[] HEX_MAP = "0123456789abcdef".toCharArray();
+
     public String toHex(int num) {
         if (num == 0) {
             return "0";

@@ -2,14 +2,17 @@ package qiwx.execption;
 
 public class FuShuExecption extends Exception {
     private int value;
-    public FuShuExecption(){
+
+    public FuShuExecption() {
         super();
     }
-    public FuShuExecption(String msg,int value){
+
+    public FuShuExecption(String msg, int value) {
         super(msg);
-        this.value=value;
+        this.value = value;
     }
-    public int getValue(){
+
+    public int getValue() {
         return value;
     }
 }
