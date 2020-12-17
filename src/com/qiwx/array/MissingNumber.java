@@ -4,7 +4,9 @@ package com.qiwx.array;
 //缺失的数字
 public class MissingNumber {
     public static void main(String[] args) {
-        missingNumber(new int[]{3, 0, 1});
+//        missingNumber(new int[]{3, 0, 1});
+
+        System.out.println(missingNumber1(new int[]{0,1,2,3,4,5,6,8,9,10}));
     }
 
     //利用数学原理
@@ -33,4 +35,6 @@ public class MissingNumber {
         return num;
 
     }
+
+
 }
