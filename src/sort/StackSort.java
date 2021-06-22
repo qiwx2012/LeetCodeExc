@@ -21,29 +21,28 @@ public class StackSort {
         list.push(2);
         list.push(2);
         list.push(6);
-        list.push(9);
+        list.push(5);
         list.push(2);
         list.push(1);
         list.push(3);
-        LinkedList<Integer> temp = new LinkedList<>();
+        LinkedList<Integer> tempList = new LinkedList<>();
 
         while (!list.isEmpty()) {
-            int pop = list.pop();
-            if (temp.isEmpty()) {
-                temp.push(pop);
+            int value = list.pop();
+            if (tempList.isEmpty()) {
+                tempList.push(value);
             } else {
-                while (!temp.isEmpty()) {
-                    int peek = temp.pop();
-                    if (pop > peek) {
-                        list.push(peek);
+                while (!tempList.isEmpty()) {
+                    int peek = tempList.peek();
+                    if (value > peek) {
+                        list.push(tempList.pop());
                     } else {
-                        temp.push(peek);
-                        temp.push(pop);
+                        tempList.push(value);
                         break;
                     }
                 }
-                if(temp.isEmpty()){
-                    temp.push(pop);
+                if(tempList.isEmpty()){
+                    tempList.push(value);
                 }
 
             }
@@ -51,8 +50,8 @@ public class StackSort {
         }
 
 
-        while (!temp.isEmpty()) {
-            System.out.println(temp.pop());
+        while (!tempList.isEmpty()) {
+            System.out.println(tempList.pop());
         }
     }
 }
